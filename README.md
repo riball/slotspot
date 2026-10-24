@@ -104,7 +104,5 @@ Because the lock is taken before the overlap check, the check always sees the la
 ## Known limits
 
 - Each owner account manages one business.
-- Sample businesses other than "Jayanagar Hair Studio" have no owner account. They can be booked but not managed.
 - Sessions are stored in memory, so logging in again is needed after a server restart. Fine for a demo; use a session store such as Redis in production.
-- All times are Bengaluru local time (`Asia/Kolkata`). There's no timezone conversion for customers elsewhere.
 - No email confirmations or payments.
