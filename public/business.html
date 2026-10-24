@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a slot | SlotSpot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>SlotSpot</a>
+    <nav aria-label="Main">
+      <a href="index.html">Find</a>
+      <a href="my-bookings.html">My bookings</a>
+      <a href="owner.html" id="owner-link" hidden>Owner</a>
+      <a href="login.html" id="auth-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <a class="back" href="index.html">Back to search</a>
+
+    <div class="page-head">
+      <h1 id="biz-name">Loading…</h1>
+      <p class="muted" id="biz-place"></p>
+      <p id="biz-desc"></p>
+    </div>
+
+    <div class="booking">
+      <section class="panel">
+        <h2>Choose</h2>
+        <label>Service
+          <select id="service"></select>
+        </label>
+        <label>Date
+          <input id="date" type="date">
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Available times</h2>
+        <div class="legend">
+          <span class="key">Free</span>
+          <span class="key taken">Booked</span>
+        </div>
+        <div id="msg" class="msg"></div>
+        <div id="slots" class="slot-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="vendor/jquery.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/business.js"></script>
+</body>
+</html>

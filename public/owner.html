@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owner dashboard | SlotSpot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>SlotSpot</a>
+    <nav aria-label="Main">
+      <a href="index.html">Find</a>
+      <a href="my-bookings.html">My bookings</a>
+      <a href="owner.html" id="owner-link" aria-current="page" hidden>Owner</a>
+      <a href="login.html" id="auth-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Owner dashboard</h1>
+      <p class="muted" id="business-name"></p>
+    </div>
+
+    <div id="msg" class="msg"></div>
+
+    <div id="owner-panels" class="owner-grid">
+      <div>
+        <section class="panel">
+          <h2>Schedule</h2>
+          <label>Day
+            <input id="schedule-date" type="date">
+          </label>
+          <table>
+            <thead><tr><th>Time</th><th>Service</th><th>Customer</th></tr></thead>
+            <tbody id="schedule"></tbody>
+          </table>
+          <p class="muted">Refreshes every 30 seconds.</p>
+        </section>
+
+        <section class="panel">
+          <h2>Services</h2>
+          <table>
+            <thead><tr><th>Name</th><th>Duration</th><th>Price</th><th></th></tr></thead>
+            <tbody id="services"></tbody>
+          </table>
+
+          <form id="service-form">
+            <input type="hidden" id="service-id">
+            <div class="row">
+              <label>Name
+                <input id="service-name" type="text" maxlength="120" required>
+              </label>
+              <label>Minutes
+                <input id="service-duration" type="number" min="15" max="240" step="5" required>
+              </label>
+              <label>Price (₹)
+                <input id="service-price" type="number" min="0" max="100000" step="1" required>
+              </label>
+            </div>
+            <div class="row">
+              <button type="submit" id="service-save">Add service</button>
+              <button type="button" id="service-cancel" class="secondary" hidden>Cancel edit</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div>
+        <section class="panel">
+          <h2>Opening hours</h2>
+          <form id="hours-form">
+            <div id="hours"></div>
+            <button type="submit">Save hours</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="vendor/jquery.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/owner.js"></script>
+</body>
+</html>

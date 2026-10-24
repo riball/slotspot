@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find a business | SlotSpot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>SlotSpot</a>
+    <nav aria-label="Main">
+      <a href="index.html" aria-current="page">Find</a>
+      <a href="my-bookings.html">My bookings</a>
+      <a href="owner.html" id="owner-link" hidden>Owner</a>
+      <a href="login.html" id="auth-link">Log in</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Book a local appointment in a few taps.</h1>
+      <p>Salons, tutors, physios and repair shops across Bengaluru. See what is free, pick a time, and it is yours.</p>
+
+      <div class="panel search-panel">
+        <div class="row">
+          <label>Name
+            <input id="q" type="search" placeholder="e.g. Hair" autocomplete="off">
+          </label>
+          <label>Category
+            <select id="category"><option value="">All categories</option></select>
+          </label>
+          <label>Area
+            <select id="area"><option value="">All areas</option></select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2>Businesses</h2>
+    <div id="results" class="results"></div>
+  </main>
+
+  <script src="vendor/jquery.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
